@@ -44,7 +44,7 @@ def generate_plot(df,
                          y=dependent_variable, order=group_variable_order,
                          showmeans=True,
                          meanline=True,
-                         meanprops={'color': 'k', 'ls': '-', 'lw': 3},
+                         meanprops={'color': 'black', 'ls': '-', 'lw': 3},
                          medianprops={'visible': False},
                          whiskerprops={'visible': False},
                          zorder=0,
@@ -62,7 +62,7 @@ def generate_plot(df,
         for t, _ in enumerate(group_variable_order):
             ax.collections[t].set_ec(palette_list[t])
 
-        ax.axhline(y=0, color='k', linestyle=':', linewidth=2)
+        ax.axhline(y=0, color='black', linestyle=':', linewidth=2)
 
         # annotation significance method 1 (using mannwhitneyu test on the data)
         current_df = df
@@ -134,12 +134,14 @@ def generate_plot(df,
 
         # add global title
         if super_title is not None:
-            fig.suptitle(super_title, fontsize="large", color="k")
+            fig.suptitle(super_title, fontsize="large", color="black")
 
         # draw line and text below group labels
         trans = ax.get_xaxis_transform()
-        ax.plot([0.8, 2.3], [-.36, -.36], color="k", transform=trans, clip_on=False, linewidth=2)
-        plt.figtext(0.645, 0.085, "non-setosa", ha="center", va="top", fontsize=20, color="k")
+        ax.plot([0.8, 2.4], [-.36, -.36],
+                color="black", transform=trans, clip_on=False, linewidth=2)
+        plt.figtext(0.645, 0.085, "18S-26S rDNA",
+                    ha="center", va="top", fontsize=18, color="black")
 
 
 if __name__ == '__main__':
