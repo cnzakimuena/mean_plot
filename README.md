@@ -17,7 +17,7 @@ pip install -r requirements.txt
 Usage:
 
 ```bash
-python mean_plot.py
+python plot_mean.py
 ```
 
 <p align="center">
